@@ -51,5 +51,6 @@ type Props = {
 	soft?: Soft;
 	outline?: Outline;
 	bordered?: Bordered;
+	class?: string;
 };
 export { Root, type Props, alertVariants, Root as Alert };
