@@ -1,8 +1,7 @@
 <script>
-	import Button from '$lib/components/button/button.svelte';
-	import { Icon, Plus } from 'svelte-hero-icons';
+	import Alert from '$lib/components/alert/alert.svelte';
 </script>
 
-<Button outline="slate" square="lg">
-	<Icon src={Plus} class="flex-shrink-0 size-6" />
-</Button>
+<Alert bordered="left" outline="teal">
+	<h1>Page</h1>
+</Alert>
