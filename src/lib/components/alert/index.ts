@@ -1,5 +1,5 @@
 import { type VariantProps, tv } from 'tailwind-variants';
-
+import Root from './alert.svelte';
 const alertVariants = tv({
 	base: 'mt-2 text-sm rounded-lg p-4',
 	variants: {
@@ -52,4 +52,4 @@ type Props = {
 	outline?: Outline;
 	bordered?: Bordered;
 };
-export { type Props, alertVariants };
+export { Root, type Props, alertVariants, Root as Alert };
