@@ -1,61 +1,52 @@
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Avatar as AvatarPrimitive } from 'bits-ui';
 import Root from './avatar.svelte';
-const avatarVariants = tv({
-	base: 'inline-flex items-center justify-center',
+
+export const avatarVariants = tv({
+	base: 'inline-block',
 	variants: {
-		size: {
-			default: 'size-[46px]',
-			xs: 'size-8',
-			sm: 'size-[38px]',
-			lg: 'size-[62px]'
+		variant: {
+			circle : 'rounded-full',
+			square : 'rounded-lg',
 		},
-		shape: {
-			circle: 'rounded-full',
-			square: 'rounded-lg'
+		size : {
+			sm : 'size-8',
+			md : 'size-[38]px',
+			lg : 'size-[46]px',
+			xl : 'size-[62]px'
 		},
-		solid: {
-			default: 'bg-gray-800 font-semibold text-white dark:bg-white dark:text-neutral-800',
-			gray: 'bg-gray-500 font-semibold text-white',
-			green: 'bg-green-500 font-semibold text-white',
-			blue: 'bg-blue-600 font-semibold text-white dark:bg-blue-500',
-			red: 'bg-red-500 font-semibold text-white',
-			yellow: 'bg-yellow-500 font-semibold text-white',
-			white: 'bg-white font-semibold text-gray-800'
+		placeHolder_inicials : {
+			true : 'inline-flex items-center justify-center rounded-full bg-gray-500 text-xs font-semibold text-white leading-none',
 		},
-		soft: {
-			default: 'bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white',
-			gray: 'bg-gray-50 text-gray-500 dark:bg-white/10 dark:text-white',
-			teal: 'bg-teal-100 text-teal-800 dark:bg-teal-800/30 dark:text-teal-500',
-			blue: 'bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500',
-			red: 'bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500',
-			yellow: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500',
-			white: 'bg-white/10 text-white'
-		},
-		outline: {
-			default: ' border border-gray-800 text-gray-800 dark:border-neutral-200 dark:text-white',
-			gray: ' border border-gray-500 text-gray-500 dark:text-neutral-400',
-			teal: ' border border-teal-500 text-teal-500',
-			blue: ' border border-blue-600 text-blue-600 dark:text-blue-500',
-			red: ' border border-red-500 text-red-500',
-			yellow: ' border border-yellow-500 text-yellow-500',
-			white: ' border border-white text-white'
+		color:{
+			gray :'bg-gray-500',
+			green :'bg-green-500', 
+			blue:'bg-blue-600',
+			red:'bg-red-500',
+			yellow:'bg-yellow-500',
+			white : 'bg-white'
 		}
-	}
+
+	},
+	
 });
+export type Variant = VariantProps<typeof avatarVariants>['variant'];
+export type Size = VariantProps<typeof avatarVariants>['size'];
+export type placeHolder_inicials= VariantProps<typeof avatarVariants>['placeHolder_inicials'];
+export type Color= VariantProps<typeof avatarVariants>['color'];
 
-type Size = VariantProps<typeof avatarVariants>['size'];
-type Shape = VariantProps<typeof avatarVariants>['shape'];
-type Solid = VariantProps<typeof avatarVariants>['solid'];
-type Soft = VariantProps<typeof avatarVariants>['soft'];
-type Outline = VariantProps<typeof avatarVariants>['outline'];
 
-type Props = AvatarPrimitive.Props & {
+
+export type Props = AvatarPrimitive.Props & {
+	variant?: Variant;
 	size?: Size;
-	shape?: Shape;
-	solid?: Solid;
-	soft?: Soft;
-	outline?: Outline;
+	placeHolder_inicials?:placeHolder_inicials;
+	color?:Color
+	class? : string
+	
 };
 
-export { Root, type Props, Root as Button, type Props as AvatarProps, avatarVariants };
+export {
+	Root, Root as Avatar
+}
+
