@@ -5,11 +5,14 @@
 	import ButtonGroup from '$lib/components/button-group/button-group.svelte';
 	import Button from '$lib/components/button/button.svelte';
 	import Card from '$lib/components/card/card.svelte';
+	import Checkbox from '$lib/components/checkbox/checkbox.svelte';
 	import Collapse from '$lib/components/collapse/collapse.svelte';
 	import FileInput from '$lib/components/file-input/file-input.svelte';
 	import InputGruop from '$lib/components/input-group/input-gruop.svelte';
 	import Input from '$lib/components/input/input.svelte';
 	import List from '$lib/components/list/list.svelte';
+	import RadioButton from '$lib/components/radio-button/radio-button.svelte';
+	import Switch from '$lib/components/switch/switch.svelte';
 	import TextArea from '$lib/components/text-area/text-area.svelte';
 
 
@@ -69,3 +72,13 @@
 <FileInput variant='basic' size='md'> file</FileInput>
 
 <p>---------------------------------------------------------------</p>
+
+<Checkbox variant='default'>item 1</Checkbox>
+<Checkbox variant='default'>item 2</Checkbox>
+<Checkbox variant='default'>item 3</Checkbox>
+
+<RadioButton variant='default'> radio 1</RadioButton>
+
+<p>---------------------------------------------------------------</p>
+
+<Switch variant='default' size='md' color='gray'></Switch>
