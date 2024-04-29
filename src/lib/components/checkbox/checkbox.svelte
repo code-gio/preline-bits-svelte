@@ -6,7 +6,6 @@
 	type $$Props = HTMLAttributes<HTMLDivElement> & {
 		variant?: Variant;
 		class?: string;
-        check?: 'checkbox';
 	};
 
 	let className: $$Props['class'] = undefined;
